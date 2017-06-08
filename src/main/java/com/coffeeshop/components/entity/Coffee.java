@@ -1,15 +1,9 @@
 package com.coffeeshop.components.entity;
-/**
- * 
- * @author dynamic
- *
- *Contains information about Coffee available 
- *
- */
+
 public class Coffee {
-	public int id;
-	public String name;
-	public int price;
+	private int id;
+	private String name;
+	private int price;
 	
 	public Coffee() {
 	}

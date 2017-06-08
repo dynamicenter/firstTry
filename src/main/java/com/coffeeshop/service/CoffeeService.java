@@ -13,7 +13,7 @@ public class CoffeeService {
 	@Autowired
 	private ICoffee iCoffee;
 	
-	public Coffee searchById(Long id) {
+	public Coffee searchByIdCoffee(int id) {
 		return iCoffee.searchByIdCoffee(id);
 	}
 	
@@ -21,8 +21,8 @@ public class CoffeeService {
 		iCoffee.addCoffee(coffee);	
 	}
 	
-	public Collection<Coffee>informationAboutCoffee(){
-		return iCoffee.infoAboutCoffee();
+	public Collection<Coffee>infoAboutCoffee(int page){
+		return iCoffee.infoAboutCoffee(page);
 	}
 	
 	

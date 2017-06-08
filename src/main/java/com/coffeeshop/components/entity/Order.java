@@ -1,6 +1,5 @@
 package com.coffeeshop.components.entity;
 
-import java.sql.Date;
 
 /**
  * 
@@ -10,34 +9,40 @@ import java.sql.Date;
  *
  */
 public class Order {
-	private Long idOrder;
-	private Long idCoffee;
-	private Date dateOrder;
-	
-	public Long getId(){
-		return idOrder;
-	}
-	
-	public void setId(Long idorder){
-		this.idOrder = idorder;
-	}
-	
-	public Long getIdCoffee(){
-		return idCoffee;
-	}
-	
-	public void setIdCoffee(Long idcoffee){
-		this.idCoffee = idcoffee;
-	}
-	
-	public Date getDateorder(){
-		return dateOrder;
-	}
-	
-	public void setDateorder(Date dateorder){
-		this.dateOrder=dateorder;
+	private int id;
+	private int idStuff;
+	private float totalSum;
+
+	public Order() {
 	}
 
+	public Order(int id, int idStuff, float totalSum){
+		this.id = id;
+		this.idStuff = idStuff;
+		this.totalSum = totalSum;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
 	
+	public int getIdStuff() {
+		return idStuff;
+	}
+
+	public void setIdStuff(int idStuff) {
+		this.idStuff = idStuff;
+	}
+
+	public float getTotalSum() {
+		return totalSum;
+	}
+
+	public void setTotalSum(float totalSum) {
+		this.totalSum = totalSum;
+	}
 }
-
