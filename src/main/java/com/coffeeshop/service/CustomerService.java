@@ -12,12 +12,12 @@ public class CustomerService {
 	@Autowired
 	public ICustomer iCustomer;
 	
-	public Customer searchByIdCustomer(Long id){
+	public Customer searchByIdCustomer(int id){
 		return iCustomer.searchByIdCustomer(id);
 	}
 	
 	public Collection<Customer> searchCustomers(int page) {
-		return iCustomer.infoAboutCustomers();
+		return iCustomer.searchCustomers(page);
 	}
 	
 	

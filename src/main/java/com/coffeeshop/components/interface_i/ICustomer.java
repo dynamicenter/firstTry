@@ -6,9 +6,9 @@ import com.coffeeshop.components.entity.Customer;
 
 public interface ICustomer {
 	
-	public Customer searchByIdCustomer(Long id);
+	public Customer searchByIdCustomer(int id);
 	
-	public Collection<Customer> infoAboutCustomers();
+	public Collection<Customer> searchCustomers(int page);
 	
 	public void addCustomer(Customer customer);
 	

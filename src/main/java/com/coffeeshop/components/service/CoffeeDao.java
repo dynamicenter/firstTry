@@ -16,7 +16,7 @@ import com.coffeeshop.components.interface_i.ICoffee;
 
 
 @Repository
-public class CoffeeShopDao implements ICoffee{
+public class CoffeeDao implements ICoffee{
 	
 	@Autowired
 	private JdbcTemplate jdbc;
@@ -26,9 +26,9 @@ public class CoffeeShopDao implements ICoffee{
 		
 		public Coffee mapRow(ResultSet rs, int rowNum) throws SQLException {
 			Coffee coffee = new Coffee();
-			Coffee.setId(rs.getInt(1));
-			Coffee.setName(rs.getString(2));
-			Coffee.setPrice(rs.getInt(3));
+			coffee.setId(rs.getInt(1));
+			coffee.setName(rs.getString(2));
+			coffee.setPrice(rs.getInt(3));
 			
 			return coffee;
 		}
@@ -38,29 +38,30 @@ public class CoffeeShopDao implements ICoffee{
 	 * Search
 	 * 
 	 */
-	public Coffee searchById(int id) {
+	public Coffee searchByIdCoffee(int id) {
 		final String SQL = "Select * FROM  coffee WHERE id=?";
 		Coffee coffee = jdbc.queryForObject(SQL, new workingWithRowMap(),id);
 		return coffee;
 	}
+	
+	
 	/*
 	 * 
-	 * Update
+	 * Search all
 	 * 
 	 */
-	public void updateCoffee(Coffee coffee){
-		final String SQL = "UPDATE bike SET name=?,price=? WHERE id=?";
-		final int id = coffee.getId();
+	public Collection<Coffee> infoAboutCoffee(int page) {
+		page *= 3;
+		final String SQL = "SELECT * FROM Coffee LIMIT 3 offset ?";
+		List<Coffee> coffee = jdbc.query(SQL, new workingWithRowMap(), page);
+		return coffee;
+	}
+		
+	public void addCoffee(Coffee coffee) {
+		final String SQL = "INSERT INTO Products (idSubtype, Name, Firm) values (?, ?, ?) ";
 		final String name = coffee.getName();
 		final int price = coffee.getPrice();
-		
-		jdbc.update(SQL, new Object[]{name,price,id});
-		
+			
+		jdbc.update(SQL, new Object[] { name, price });
 	}
-	/*
-	 * 
-	 * 
-	 * 
-	 */
-
 }

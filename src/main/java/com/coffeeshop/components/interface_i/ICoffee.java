@@ -6,9 +6,9 @@ import com.coffeeshop.components.entity.Coffee;
 
 public interface ICoffee {
 	
-	public Coffee searchByIdCoffee(Long id);
+	public Coffee searchByIdCoffee(int id);
 	
-	public Collection<Coffee> infoAboutCoffee();
+	public Collection<Coffee> infoAboutCoffee(int page);
 	
 	public void addCoffee(Coffee coffee);
 	

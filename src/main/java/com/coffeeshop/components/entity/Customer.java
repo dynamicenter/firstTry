@@ -37,8 +37,8 @@ public class Customer {
 		return surname;
 	}
 	
-	public void setSername(String sername){
-		this.surname=sername;
+	public void setSurname(String surname){
+		this.surname=surname;
 	}
 	
 	public String getEmail(){
@@ -53,7 +53,7 @@ public class Customer {
 		return creditcard;
 	}
 	
-	public void setCredicard(String creditcard){
+	public void setCreditcard(String creditcard){
 		this.creditcard=creditcard;
 	}
 }
